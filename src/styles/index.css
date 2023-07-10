@@ -1,3 +1,15 @@
 /* 
     General Styles
 */
+.logostarwars{
+    height: 90px;
+    padding-left:15px;
+}
+.titulo_characters{
+    color: rgb(175, 37, 37);
+    margin-left: 20px;
+}
+.carta{
+    width: 150px;
+    margin:20px;
+}
