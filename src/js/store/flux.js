@@ -14,6 +14,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => setStore({characters: data.results }))
 					.catch(error => console.log(error));
 			},
+			getAllPlanets:()=>{
+				fetch("https://www.swapi.tech/api/planets/",{
+					method: 'GET',
+				})
+				.then(response => response.json())
+					.then(data => setStore({planets: data.results }))
+					.catch(error => console.log(error));
+			},
+			getAllVehicles:()=>{
+				fetch("https://www.swapi.tech/api/vehicles/",{
+					method: 'GET',
+				})
+				.then(response => response.json())
+					.then(data => setStore({vehicles: data.results }))
+					.catch(error => console.log(error));
+			},
 			// }
 			// // Use getActions to call a function within a fuction
 			// exampleFunction: () => {

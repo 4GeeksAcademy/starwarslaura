@@ -6,11 +6,13 @@ import { Card } from "./card.js";
 export const CardGroup = props => {
 	const { store, actions } = useContext(Context)
 
-    useEffect(() => {
-		actions.getAllCharacters();
-	}, []);
+    // useEffect(() => {
+	// 	actions.getAllCharacters();
+	// }, []);
     // console.log(store.characters)
     const personajes=store.characters;
+    const planetas=store.planets;
+    const vehiculos=store.vehicles;
 
 
     return (<div>
@@ -21,6 +23,21 @@ export const CardGroup = props => {
             key={item.uid}/>
         )}
         </div>
-        
-    </div>)
-}
+        <h1 className="titulo_characters ">Planets</h1>
+        <div className="d-inline-flex overflow-x-scroll" >
+        {planetas?.map((item)=>
+        <Card name={item.name}
+            key={item.uid}/>
+        )}
+        </div>
+        <div>
+        <h1 className="titulo_characters ">Vehicles</h1>
+        <div className="d-inline-flex overflow-x-scroll" >
+        {vehiculos?.map((item)=>
+        <Card name={item.name}
+            key={item.uid}/>
+        )}
+        </div>
+
+    </div>
+    </div>)}
